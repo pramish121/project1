@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="groceryApp">
+    <head>
+        <title>Grocery List </title>
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    </head>
+    <body >
+      <h1>Grocery List</h1> 
+        <div ng-controller="groceryAppCtrl">
+     
+            
+            <input class="form-control" key-enter="addGrocery()" type="text" ng-model="groceryTitle" placeholder="Enter Grocery">
+            <button class="btn btn-success" ng-click="addGrocery()"> Add Grocery</button>
+            <ol>
+                <li ng-repeat="grocery in groceryList track by $index">
+                    {{grocery}}
+                </li>
+            </ol>
+                
+        </div>
+        
+        
+        
+        <script src="/node_modules/angular/angular.js"></script>
+        <script src="/scripts/groceryApp.js"></script>
+        <script src="/scripts/controllers/groceryAppCtrl.js"></script>
+        
+    </body>
+</html>
